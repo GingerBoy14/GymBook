@@ -16,6 +16,7 @@
     "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
+    "lodash": "^4.17.21",
     "metro-config": "^0.66.1",
     "prop-types": "^15.7.2",
     "react": "17.0.1",

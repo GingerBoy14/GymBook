@@ -2,7 +2,6 @@ import 'react-native-gesture-handler'
 import React from 'react'
 import { Box, Text, Row, Col } from '@qonsoll/react-native-design'
 import { NavigationContainer } from '@react-navigation/native'
-
 const App = () => (
   <NavigationContainer>
     <Row>
