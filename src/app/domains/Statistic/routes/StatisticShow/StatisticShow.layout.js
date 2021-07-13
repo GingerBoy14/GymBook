@@ -1,7 +1,8 @@
-import { Box } from '@qonsoll/react-native-design'
+import React from 'react'
+import { Text } from '@qonsoll/react-native-design'
 
 const StatisticShow = () => {
-  return <Box>StatisticShow</Box>
+  return <Text>StatisticShow</Text>
 }
 
 export default StatisticShow

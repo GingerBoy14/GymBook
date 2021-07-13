@@ -1,7 +1,8 @@
-import { Box } from '@qonsoll/react-native-design'
+import React from 'react'
+import { Text } from '@qonsoll/react-native-design'
 
 const Settings = () => {
-  return <Box>Settings</Box>
+  return <Text>Settings</Text>
 }
 
 export default Settings

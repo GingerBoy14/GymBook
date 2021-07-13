@@ -1,7 +1,8 @@
-import { Box } from '@qonsoll/react-native-design'
+import React from 'react'
+import { Text } from '@qonsoll/react-native-design'
 
 const Dashboard = () => {
-  return <Box>Dashboard</Box>
+  return <Text>Dashboard</Text>
 }
 
 export default Dashboard

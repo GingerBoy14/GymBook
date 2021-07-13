@@ -228,7 +228,7 @@ const CORE = {
   SHADOWS,
   components: {
     // ALERTS: {},
-    // AVATARS: avatars({theme: defaultTheme}),
+    //AVATARS,
     // BADGES: {},
     // BUTTON_ITEMS: {},
     // SWITCHES: switches({theme: defaultTheme}),

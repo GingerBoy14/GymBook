@@ -1,2 +1,1 @@
-export { default as AppWrapper } from './AppWrapper'
-export { default as BottomNavigation } from './BottomNavigation'
+export { default as Header } from './Header'

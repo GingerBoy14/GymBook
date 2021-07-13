@@ -1,7 +1,8 @@
-import { Box } from '@qonsoll/react-native-design'
+import React from 'react'
+import { Text } from '@qonsoll/react-native-design'
 
 const UserShow = () => {
-  return <Box>UserShow</Box>
+  return <Text>UserShow</Text>
 }
 
 export default UserShow
