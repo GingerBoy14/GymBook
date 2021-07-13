@@ -17,7 +17,7 @@ const DashboardStack = () => (
       header: (props) => <Header {...props} />
     }}>
     {screens.map(({ name, component }) => (
-      <Stack.Screen name={name} component={component} />
+      <Stack.Screen name={name} component={component} key={name} />
     ))}
   </Stack.Navigator>
 )
