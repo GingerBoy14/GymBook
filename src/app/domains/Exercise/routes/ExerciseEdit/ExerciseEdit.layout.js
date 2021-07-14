@@ -1,7 +1,7 @@
-import { Box } from '@qonsoll/react-native-design'
+import { Text } from '@qonsoll/react-native-design'
 
 const ExerciseEdit = () => {
-  return <Box>ExerciseEdit</Box>
+  return <Text>ExerciseEdit</Text>
 }
 
 export default ExerciseEdit
