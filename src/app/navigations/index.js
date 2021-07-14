@@ -1,4 +1,5 @@
-export { default } from './DrawerStack'
+export { default } from './RootStack'
+export { default as DrawerStack } from './DrawerStack'
 export { default as BottomTabNavigator } from './BottomTabNavigator'
 export { default as DashboardStack } from './DashboardStack'
 export { default as SettingsStack } from './SettingsStack'

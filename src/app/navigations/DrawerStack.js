@@ -1,20 +1,14 @@
 import React from 'react'
-import {
-  createDrawerNavigator,
-  DrawerContentScrollView
-} from '@react-navigation/drawer'
-import { UserShow } from '~/app/domains/User/routes'
-import { BottomTabNavigator } from './'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { Drawer as DrawerContent } from '~/app/domains/App/components'
+import BottomTabNavigator from './BottomTabNavigator'
 const Drawer = createDrawerNavigator()
 
 const DrawerStack = () => (
   <Drawer.Navigator
+    initialRouteName="Home"
     drawerPosition="right"
-    drawerContent={(props) => (
-      <DrawerContentScrollView {...props}>
-        <UserShow />
-      </DrawerContentScrollView>
-    )}>
+    drawerContent={(props) => <DrawerContent {...props} />}>
     <Drawer.Screen name="Home" component={BottomTabNavigator} />
   </Drawer.Navigator>
 )
