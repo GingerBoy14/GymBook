@@ -7,6 +7,7 @@ import SessionStack from './Session.Stack'
 const Stack = createStackNavigator()
 
 const RootStack = () => {
+  // [ADDITIONAL_HOOKS]
   const { session } = useSession()
 
   return (
