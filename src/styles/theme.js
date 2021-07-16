@@ -301,6 +301,17 @@ const EXTENSIONS = {
         height: 64,
         width: 64,
         margin: 28
+      },
+      xxl: {
+        paddingHorizontal: 32,
+        // fontSize: CORE.FONT_SIZES.h3,
+        // lineHeight: CORE.LINE_HEIGHTS.h3,
+        // infoTextFontSize: CORE.FONT_SIZES.h4,
+        // infoTextLineHeight: CORE.LINE_HEIGHTS.h4,
+        iconSize: ICON_SIZES.xxl,
+        height: 128,
+        width: 128,
+        margin: 32
       }
     },
     VARIANT_TOKENS: {

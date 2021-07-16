@@ -6,9 +6,9 @@ import {
   Summary
 } from '@qonsoll/react-native-design/src/assets'
 import { BottomNavigation } from '~/components'
-import SettingsStack from '~/app/navigations/SettingsStack'
-import DashboardStack from '~/app/navigations/DashboardStack'
-import StatisticStack from '~/app/navigations/StatisticStack'
+import SettingsStack from '~/app/navigations/Settings.Stack'
+import DashboardStack from '~/app/navigations/Dashboard.Stack'
+import StatisticStack from '~/app/navigations/Statistic.Stack'
 import ROUTE_PATHS from '~/constants/routePaths'
 
 const Tab = createBottomTabNavigator()

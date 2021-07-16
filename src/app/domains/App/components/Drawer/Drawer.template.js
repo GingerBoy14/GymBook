@@ -19,7 +19,10 @@ const DrawerTemplate = (props) => {
       }}
       {...props}>
       <UserShow />
-      <Button onPress={() => sessionDispatch({ type: TYPES.LOGOUT })}>
+      <Button
+        variant="danger-light"
+        mx={12}
+        onPress={() => sessionDispatch({ type: TYPES.LOGOUT })}>
         Logout
       </Button>
     </DrawerContentScrollView>

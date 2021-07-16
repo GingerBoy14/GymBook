@@ -1,5 +1,5 @@
 import React from 'react'
-import DefaultStack from './DefaultStack'
+import DefaultStack from './Default.Stack'
 import { routes, ROUTE_PATHS } from '~/constants'
 
 const screens = [routes[ROUTE_PATHS.SETTINGS]]

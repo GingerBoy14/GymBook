@@ -1,8 +1,8 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { useSession } from '~/app/contexts/Session'
-import DrawerStack from './DrawerStack'
-import SessionStack from './SessionStack'
+import DrawerStack from './Drawer.Stack'
+import SessionStack from './Session.Stack'
 
 const Stack = createStackNavigator()
 
