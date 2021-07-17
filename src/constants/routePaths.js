@@ -13,7 +13,8 @@ const ROUTE_PATHS = {
   SET_EDIT: 'SetEdit',
   SET_CREATE: 'SetCreate',
   DASHBOARD: 'Dashboard',
-  SETTINGS: 'Settings'
+  SETTINGS: 'Settings',
+  MEMBERSHIP_EDIT: 'MembershipEdit'
 }
 
 export default ROUTE_PATHS

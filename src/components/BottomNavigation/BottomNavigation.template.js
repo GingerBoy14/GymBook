@@ -7,12 +7,15 @@ import theme from '~/styles/theme'
 const BottomNavigation = (props) => {
   const { state, descriptors, navigation } = props
   const focusedOptions = descriptors[state.routes[state.index].key].options
+
+  // [ADDITIONAL_HOOKS]
   const insets = useSafeAreaInsets()
+
   if (focusedOptions.tabBarVisible === false) {
     return null
   }
   return (
-    <Box pb={insets.bottom} pt={12} bg="grey-t-10" flexDirection="row">
+    <Box pb={insets.bottom} pt={12} bg="grey-9" flexDirection="row">
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key]
         const label =
