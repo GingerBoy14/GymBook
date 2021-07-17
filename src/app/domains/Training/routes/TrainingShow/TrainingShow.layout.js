@@ -1,7 +1,13 @@
-import { Box } from '@qonsoll/react-native-design'
+import React from 'react'
+import { Text } from '@qonsoll/react-native-design'
+import { PageWrapper } from '~/components'
 
 const TrainingShow = () => {
-  return <Box>TrainingShow</Box>
+  return (
+    <PageWrapper>
+      <Text>TrainingShow</Text>
+    </PageWrapper>
+  )
 }
 
 export default TrainingShow

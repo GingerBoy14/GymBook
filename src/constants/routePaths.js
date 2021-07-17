@@ -8,6 +8,7 @@ const ROUTE_PATHS = {
   TRAINING_SHOW: 'TrainingShow',
   TRAINING_EDIT: 'TrainingEdit',
   STATISTIC_SHOW: 'StatisticShow',
+  EXERCISE_ALL: 'ExerciseAll',
   EXERCISE_EDIT: 'ExerciseEdit',
   EXERCISE_CREATE: 'ExerciseCreate',
   SET_EDIT: 'SetEdit',

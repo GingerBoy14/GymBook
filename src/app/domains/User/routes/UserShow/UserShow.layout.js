@@ -1,5 +1,4 @@
 import React from 'react'
-import { Text as RNText } from 'react-native'
 import { Avatar, Box, Text } from '@qonsoll/react-native-design'
 import { useSession } from '~/app/contexts/Session'
 import { PageWrapper } from '~/components'

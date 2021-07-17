@@ -2,12 +2,12 @@ import React from 'react'
 import { Text } from '@qonsoll/react-native-design'
 import { PageWrapper } from '~/components'
 
-const StatisticShow = () => {
+const ExerciseAll = () => {
   return (
     <PageWrapper>
-      <Text>StatisticShow</Text>
+      <Text>ExerciseAll</Text>
     </PageWrapper>
   )
 }
 
-export default StatisticShow
+export default ExerciseAll

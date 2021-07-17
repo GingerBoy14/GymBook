@@ -9,16 +9,16 @@ const Settings = (props) => {
   // [COMPUTED_PROPERTIES]
   const menuItems = [
     {
+      text: 'Profile Edit',
+      onPress: () => navigation.push(ROUTE_PATHS.USER_EDIT)
+    },
+    {
       text: 'Exercises',
-      onPress: () => navigation.push(ROUTE_PATHS.EXERCISE_EDIT)
+      onPress: () => navigation.push(ROUTE_PATHS.EXERCISE_ALL)
     },
     {
       text: 'Membership',
       onPress: () => navigation.push(ROUTE_PATHS.MEMBERSHIP_EDIT)
-    },
-    {
-      text: 'Set',
-      onPress: () => navigation.push(ROUTE_PATHS.SET_EDIT)
     }
   ]
 
