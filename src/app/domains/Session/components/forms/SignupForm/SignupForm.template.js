@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Button, Input } from '@qonsoll/react-native-design'
+import { Box, Button } from '@qonsoll/react-native-design'
+import { Input } from '~/components/Lib'
 
 const SignupForm = (props) => {
+  const { onSubmit } = props
   return (
     <>
       <Box mb={20}>
@@ -14,7 +16,7 @@ const SignupForm = (props) => {
         />
       </Box>
       <Box mb={20}>
-        <Input
+        <Input.Password
           label="Password"
           placeholder="Enter your password"
           onChange={(data) => console.log(data)}
@@ -22,7 +24,7 @@ const SignupForm = (props) => {
         />
       </Box>
       <Box mb={20}>
-        <Input
+        <Input.Password
           label="Confirm password"
           placeholder="Confirm your password"
           onChange={(data) => console.log(data)}
@@ -30,11 +32,11 @@ const SignupForm = (props) => {
         />
       </Box>
 
-      <Button>Sign up</Button>
+      <Button onPress={onSubmit}>Sign up</Button>
     </>
   )
 }
 
-SignupForm.propTypes = {}
+SignupForm.propTypes = { onSubmit: PropTypes.func }
 
 export default SignupForm

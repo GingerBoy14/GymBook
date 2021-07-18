@@ -1,11 +1,24 @@
 import React from 'react'
-import { Text } from '@qonsoll/react-native-design'
+import { useSession, TYPES } from '~/app/contexts/Session'
 import { PageWrapper } from '~/components'
+import { UserForm } from '~/app/domains/User/components'
 
-const UserEdit = () => {
+const UserEdit = (props) => {
+  const { navigation } = props
+  // [ADDITIONAL_HOOKS]
+  const { sessionDispatch } = useSession()
+
+  // [CLEAN_FUNCTIONS]
+  const onUserEdit = (data) => {
+    sessionDispatch({ type: TYPES.SET_USER, payload: data })
+    navigation.goBack()
+  }
   return (
     <PageWrapper>
-      <Text>UserEdit</Text>
+      <UserForm
+        onSubmit={onUserEdit}
+        onError={(error) => console.log('error', error)}
+      />
     </PageWrapper>
   )
 }

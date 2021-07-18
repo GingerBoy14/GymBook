@@ -1,13 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Box,
-  Button,
-  Col,
-  Input,
-  Link,
-  Row
-} from '@qonsoll/react-native-design'
+import { Box, Button, Col, Link, Row } from '@qonsoll/react-native-design'
+import { Input } from '~/components'
 
 const LoginForm = (props) => {
   const { onForgotPasswordClick, onSubmit } = props
@@ -22,7 +16,7 @@ const LoginForm = (props) => {
         />
       </Box>
       <Box mb={20}>
-        <Input
+        <Input.Password
           label="Password"
           placeholder="Enter your password"
           onChange={(data) => console.log(data)}

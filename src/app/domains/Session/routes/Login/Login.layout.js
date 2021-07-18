@@ -9,7 +9,8 @@ const default_user_data = {
   firstName: 'Maxim',
   secondName: 'Makarov',
   email: 'maxim.makarov14@gmail.com',
-  weight: 73.5
+  weight: 73.5,
+  birthday: 1279480759000
 }
 
 const Login = (props) => {

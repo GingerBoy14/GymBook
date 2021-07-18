@@ -20,8 +20,9 @@ const PageWrapper = (props) => {
   return (
     <Box
       flex={1}
-      {...contentWrapperProps}
-      justifyContent={alignMiddle && 'center'}>
+      justifyContent={alignMiddle && 'center'}
+      pb={8}
+      {...contentWrapperProps}>
       <Box mb={headingProps.mb}>
         <Box>
           <Text
