@@ -4,8 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 // Additional packages
-import org.wonday.orientation.OrientationPackage;
-import org.wonday.orientation.OrientationActivityLifecycle;
+import com.github.yamill.orientation.OrientationPackage;  // <--- import
 // -------------------
 
 import com.facebook.react.PackageList;

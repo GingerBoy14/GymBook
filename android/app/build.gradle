@@ -184,7 +184,7 @@ android {
 }
 
 dependencies {
-     compile project(':react-native-orientation-locker')
+    compile project(':react-native-orientation')
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
