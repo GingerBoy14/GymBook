@@ -1,11 +1,16 @@
 import React from 'react'
-import { Text } from '@qonsoll/react-native-design'
 import { PageWrapper, withRouteOptions } from '~/components'
+import { ExerciseForm } from '~/app/domains/Exercise/components'
 
-const ExerciseEdit = () => {
+const ExerciseEdit = (props) => {
+  const { route } = props
+
+  // [COMPUTED_PROPERTIES]
+  const defaultValues = { name: route.params.name }
+
   return (
     <PageWrapper>
-      <Text>ExerciseEdit</Text>
+      <ExerciseForm defaultValues={defaultValues} />
     </PageWrapper>
   )
 }

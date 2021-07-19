@@ -7,7 +7,7 @@ import { withRouteOptions } from '~/components/HOC'
 const UserEdit = (props) => {
   const { navigation } = props
   // [ADDITIONAL_HOOKS]
-  const { sessionDispatch } = useSession()
+  const { sessionDispatch, session } = useSession()
 
   // [CLEAN_FUNCTIONS]
   const onUserEdit = (data) => {
@@ -19,6 +19,7 @@ const UserEdit = (props) => {
       <UserForm
         onSubmit={onUserEdit}
         onError={(error) => console.log('error', error)}
+        defaultValues={session.userData}
       />
     </PageWrapper>
   )
