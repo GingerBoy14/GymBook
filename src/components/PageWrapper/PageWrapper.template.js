@@ -14,25 +14,30 @@ const PageWrapper = (props) => {
     children,
     alignMiddle,
     contentWrapperProps = DEFAULT_CONTENT_WRAPPER_PROPS,
-    headingProps = DEFAULT_HEADING_PROPS
+    headingProps = DEFAULT_HEADING_PROPS,
+    action
   } = props
 
   return (
     <Box
       flex={1}
       justifyContent={alignMiddle && 'center'}
-      pb={8}
+      py={8}
       {...contentWrapperProps}>
-      <Box mb={headingProps.mb}>
-        <Box>
-          <Text
-            variant={`h${headingProps.titleSize ?? 1}`}
-            textAlign={headingProps.textAlign}>
-            {headingProps.text}
-          </Text>
+      <Box flexDirection="row" mb={headingProps.mb}>
+        <Box flex={1}>
+          <Box>
+            <Text
+              variant={`h${headingProps.titleSize ?? 1}`}
+              textAlign={headingProps.textAlign}>
+              {headingProps.text}
+            </Text>
+          </Box>
+          {headingProps.subTitle && <Text>{headingProps.subTitle}</Text>}
         </Box>
-        {headingProps.subTitle && <Text>{headingProps.subTitle}</Text>}
+        {action && <Box>{action}</Box>}
       </Box>
+
       {children}
     </Box>
   )
@@ -48,7 +53,11 @@ PageWrapper.propTypes = {
     textAlign: PropTypes.oneOf(['auto', 'left', 'right', 'center', 'justify']),
     titleSize: PropTypes.number,
     titleMarginBottom: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  })
+  }),
+  action: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
 }
 
 export default PageWrapper

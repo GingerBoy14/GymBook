@@ -4,3 +4,4 @@ export { default as PageWrapper } from './PageWrapper'
 export { default as PageLoading } from './PageLoading'
 
 export * from './Lib'
+export * from './HOC'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from '@qonsoll/react-native-design'
-import { PageWrapper } from '~/components'
+import { PageWrapper, withRouteOptions } from '~/components'
 
 const ExerciseEdit = () => {
   return (
@@ -10,4 +10,6 @@ const ExerciseEdit = () => {
   )
 }
 
-export default ExerciseEdit
+const titleTransformer = ({ route }) => ({ title: route.params.name })
+
+export default withRouteOptions(titleTransformer)(ExerciseEdit)

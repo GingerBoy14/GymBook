@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from '@qonsoll/react-native-design'
-import { PageWrapper } from '~/components'
+import { PageWrapper, withRouteOptions } from '~/components'
 
 const ExerciseCreate = () => {
   return (
@@ -10,4 +10,4 @@ const ExerciseCreate = () => {
   )
 }
 
-export default ExerciseCreate
+export default withRouteOptions({ title: 'Create Exercise' })(ExerciseCreate)

@@ -53,9 +53,12 @@ const BottomNavigation = (props) => {
             key={route.name}>
             <Box alignItems="center">
               {options.tabBarIcon({
-                color: isFocused && theme.CORE.COLORS['primary-default']
+                color:
+                  theme.CORE.COLORS[isFocused ? 'primary-default' : 'grey-4']
               })}
-              <Text fontWeight="bold" color={isFocused && 'primary-default'}>
+              <Text
+                fontWeight="semibold"
+                color={isFocused && 'primary-default'}>
                 {label}
               </Text>
             </Box>
