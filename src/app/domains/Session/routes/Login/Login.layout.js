@@ -5,14 +5,6 @@ import { PageWrapper } from '~/components'
 import { LoginForm } from '~/app/domains/Session/components'
 import ROUTE_PATHS from '~/constants/routePaths'
 
-const default_user_data = {
-  firstName: 'Maxim',
-  secondName: 'Makarov',
-  email: 'maxim.makarov14@gmail.com',
-  weight: 73.5,
-  birthday: 1279480759000
-}
-
 const Login = (props) => {
   const { navigation } = props
   // [ADDITIONAL_HOOKS]
@@ -21,8 +13,7 @@ const Login = (props) => {
   // [CLEAN_FUNCTIONS]
   const goToSignup = () => navigation.navigate(ROUTE_PATHS.SIGN_UP)
 
-  const onLogin = () =>
-    sessionDispatch({ type: TYPES.SET_USER, payload: default_user_data })
+  const onLogin = () => sessionDispatch({ type: TYPES.MOCK_USER })
   const onForgotPasswordClick = () =>
     navigation.navigate(ROUTE_PATHS.FORGOT_PASSWORD)
   return (

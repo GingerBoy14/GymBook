@@ -1,8 +1,9 @@
 import React from 'react'
 import { Pressable, TouchableOpacity } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { Avatar, Col, Row, Text } from '@qonsoll/react-native-design'
+import { Col, Row, Text } from '@qonsoll/react-native-design'
 import { ArrowLeftShort } from '@qonsoll/react-native-design/src/assets'
+import { UserShow } from '~/app/domains/User/routes'
 import theme from '~/styles/theme'
 
 const Header = (props) => {
@@ -44,7 +45,7 @@ const Header = (props) => {
       </Col>
       <Col auto>
         <Pressable onPress={navigation.openDrawer}>
-          <Avatar />
+          <UserShow avatar size="md" />
         </Pressable>
       </Col>
     </Row>

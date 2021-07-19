@@ -19,7 +19,23 @@ const UserForm = (props) => {
   return (
     <>
       <Box mb={20}>
-        <Upload allowUploadPhoto onUpload={(data) => console.log(data)} />
+        <Controller
+          control={control}
+          rules={{
+            required: 'Enter your name!'
+          }}
+          render={({ field: { onChange, value } }) => (
+            <Upload
+              uri={value}
+              allowUploadPhoto
+              onUpload={(data) => {
+                console.log(data)
+                onChange?.()
+              }}
+            />
+          )}
+          name="avatarURL"
+        />
       </Box>
       <Row mb={20}>
         <Col flexDirection="column" pr={8}>

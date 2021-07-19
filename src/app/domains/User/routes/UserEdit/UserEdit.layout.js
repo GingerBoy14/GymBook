@@ -2,6 +2,7 @@ import React from 'react'
 import { useSession, TYPES } from '~/app/contexts/Session'
 import { PageWrapper } from '~/components'
 import { UserForm } from '~/app/domains/User/components'
+import { withRouteOptions } from '~/components/HOC'
 
 const UserEdit = (props) => {
   const { navigation } = props
@@ -23,4 +24,4 @@ const UserEdit = (props) => {
   )
 }
 
-export default UserEdit
+export default withRouteOptions({ title: 'Profile Edit' })(UserEdit)

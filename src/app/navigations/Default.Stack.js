@@ -10,8 +10,8 @@ const DefaultStack = ({ screens, withoutHeader = false }) => (
     screenOptions={{
       header: (props) => (!withoutHeader ? <Header {...props} /> : null)
     }}>
-    {screens.map(({ name, component }) => (
-      <Stack.Screen name={name} component={component} key={name} />
+    {screens.map(({ name, component, ...rest }) => (
+      <Stack.Screen name={name} component={component} key={name} {...rest} />
     ))}
   </Stack.Navigator>
 )

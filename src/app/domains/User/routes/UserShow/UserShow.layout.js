@@ -4,17 +4,33 @@ import { Avatar, Box, Text } from '@qonsoll/react-native-design'
 import { useSession } from '~/app/contexts/Session'
 import { PageWrapper } from '~/components'
 
-const UserShow = () => {
+const UserShow = (props) => {
+  const { avatar, ...rest } = props
   // [ADDITIONAL_HOOKS]
   const { session } = useSession()
 
   // [COMPUTED_PROPERTIES]
   const { userData } = session
   const birthday = moment(userData?.birthday).format('MMMM Do YYYY')
+
+  if (avatar) {
+    return (
+      <Avatar
+        size="xxl"
+        uri={session.userData?.avatarURL}
+        fullName={`${session.userData?.firstName} ${session.userData?.secondName}`}
+        {...rest}
+      />
+    )
+  }
   return (
     <PageWrapper>
       <Box alignItems="center" mb={12}>
-        <Avatar size="xxl" />
+        <Avatar
+          size="xxl"
+          uri={session.userData?.avatarURL}
+          fullName={`${session.userData?.firstName} ${session.userData?.secondName}`}
+        />
       </Box>
       <Box flexDirection="row" mb={12}>
         <Text fontWeight="bold">Name: </Text>

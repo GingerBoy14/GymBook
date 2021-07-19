@@ -4,14 +4,6 @@ import { TYPES, useSession } from '~/app/contexts/Session'
 import { PageWrapper } from '~/components'
 import { SignupForm } from '~/app/domains/Session/components'
 
-const default_user_data = {
-  firstName: 'Maxim',
-  secondName: 'Makarov',
-  email: 'maxim.makarov14@gmail.com',
-  weight: 73.5,
-  birthday: 1279480759000
-}
-
 const Signup = (props) => {
   const { navigation } = props
 
@@ -20,8 +12,7 @@ const Signup = (props) => {
 
   // [CLEAN_FUNCTIONS]
   const goToLogin = () => navigation.pop()
-  const onSignup = () =>
-    sessionDispatch({ type: TYPES.SET_USER, payload: default_user_data })
+  const onSignup = () => sessionDispatch({ type: TYPES.MOCK_USER })
   return (
     <PageWrapper
       alignMiddle
