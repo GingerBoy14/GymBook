@@ -11,6 +11,7 @@ const ROUTE_PATHS = {
   EXERCISE_ALL: 'ExerciseAll',
   EXERCISE_EDIT: 'ExerciseEdit',
   EXERCISE_CREATE: 'ExerciseCreate',
+  SET_ALL: 'SetAll',
   SET_EDIT: 'SetEdit',
   SET_CREATE: 'SetCreate',
   DASHBOARD: 'Dashboard',

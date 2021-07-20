@@ -17,6 +17,10 @@ const Settings = (props) => {
       onPress: () => navigation.push(ROUTE_PATHS.EXERCISE_ALL)
     },
     {
+      text: 'Set configs',
+      onPress: () => navigation.push(ROUTE_PATHS.SET_ALL)
+    },
+    {
       text: 'Membership',
       onPress: () => navigation.push(ROUTE_PATHS.MEMBERSHIP_EDIT)
     }

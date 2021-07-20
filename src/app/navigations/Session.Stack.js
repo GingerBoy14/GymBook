@@ -9,10 +9,10 @@ const screens = [
   routes[ROUTE_PATHS.FORGOT_PASSWORD]
 ]
 
-const SettingsStack = () => (
+const SessionStack = () => (
   <SafeAreaView style={{ flex: 1 }}>
     <DefaultStack screens={screens} withoutHeader />
   </SafeAreaView>
 )
 
-export default SettingsStack
+export default SessionStack

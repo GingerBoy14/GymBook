@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from '@qonsoll/react-native-design'
-import { PageWrapper } from '~/components'
+import { PageWrapper, withRouteOptions } from '~/components'
 
 const SetCreate = () => {
   return (
@@ -10,4 +10,4 @@ const SetCreate = () => {
   )
 }
 
-export default SetCreate
+export default withRouteOptions({ title: 'Create Set' })(SetCreate)

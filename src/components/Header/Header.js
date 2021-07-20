@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pressable, TouchableOpacity } from 'react-native'
+import { Animated, Pressable, TouchableOpacity } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Col, Row, Text } from '@qonsoll/react-native-design'
 import { ArrowLeftShort } from '@qonsoll/react-native-design/src/assets'
@@ -14,6 +14,7 @@ const Header = (props) => {
   const insets = useSafeAreaInsets()
 
   // [COMPUTED_PROPERTIES]
+  // Get title from options that will be show in header.
   const title =
     options.headerTitle !== undefined
       ? options.headerTitle
@@ -21,34 +22,47 @@ const Header = (props) => {
       ? options.title
       : scene.route.name
 
-  return (
-    <Row
-      pt={insets.top || 8}
-      pl={insets.left || 8}
-      pr={insets.right || 8}
-      pb={8}
-      bg="grey-9">
-      {previous && (
-        <Col auto v="center" mr={8}>
-          <TouchableOpacity onPress={navigation.goBack}>
-            <ArrowLeftShort
-              fill={theme.CORE.COLORS['primary-default']}
-              height={theme.CORE.ICON_SIZES.lg}
-              width={theme.CORE.ICON_SIZES.lg}
-            />
-          </TouchableOpacity>
-        </Col>
-      )}
+  // Create animation that will be show between screen switch in one stack.
+  const progress = Animated.add(
+    scene.progress.current,
+    scene.progress.next || 0
+  )
 
-      <Col v="center">
-        <Text variant="h4">{title}</Text>
-      </Col>
-      <Col auto>
-        <Pressable onPress={navigation.openDrawer}>
-          <UserShow avatar size="md" />
-        </Pressable>
-      </Col>
-    </Row>
+  const opacity = progress.interpolate({
+    inputRange: [0, 1, 2],
+    outputRange: [0, 1, 0]
+  })
+
+  return (
+    <Animated.View style={{ opacity }}>
+      <Row
+        pt={insets.top || 8}
+        pl={insets.left || 8}
+        pr={insets.right || 8}
+        pb={8}
+        bg="grey-9">
+        {previous && (
+          <Col auto v="center" mr={8}>
+            <TouchableOpacity onPress={navigation.goBack}>
+              <ArrowLeftShort
+                fill={theme.CORE.COLORS['primary-default']}
+                height={theme.CORE.ICON_SIZES.lg}
+                width={theme.CORE.ICON_SIZES.lg}
+              />
+            </TouchableOpacity>
+          </Col>
+        )}
+
+        <Col v="center">
+          <Text variant="h4">{title}</Text>
+        </Col>
+        <Col auto>
+          <Pressable onPress={navigation.openDrawer}>
+            <UserShow avatar size="md" />
+          </Pressable>
+        </Col>
+      </Row>
+    </Animated.View>
   )
 }
 

@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useReducer } from 'react'
-import { Alert } from 'react-native'
-import { COLLECTIONS } from '~/constants'
-import { updateDocument, getTimestamp } from '~/services'
+import { getTimestamp } from '~/services'
 import SessionContext from './context'
 import rootReducer from './reducer'
 
@@ -21,15 +19,15 @@ const SessionProvider = (props) => {
   const [state, dispatch] = useReducer(rootReducer, {
     userData: default_user_data
   })
-
-  useEffect(() => {
-    state.userData &&
-      updateDocument(
-        COLLECTIONS.USERS,
-        state.userData.id,
-        state?.userData
-      ).then(() => Alert.alert('user set'))
-  }, [state])
+  //
+  // useEffect(() => {
+  //   state.userData &&
+  //     updateDocument(
+  //       COLLECTIONS.USERS,
+  //       state.userData.id,
+  //       state?.userData
+  //     ).then(() => Alert.alert('user set'))
+  // }, [state])
 
   return (
     <SessionContext.Provider

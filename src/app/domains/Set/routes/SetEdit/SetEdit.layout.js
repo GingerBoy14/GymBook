@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from '@qonsoll/react-native-design'
-import { PageWrapper } from '~/components'
+import { PageWrapper, withRouteOptions } from '~/components'
 
 const SetEdit = () => {
   return (
@@ -10,4 +10,4 @@ const SetEdit = () => {
   )
 }
 
-export default SetEdit
+export default withRouteOptions({ title: 'Set Edit' })(SetEdit)

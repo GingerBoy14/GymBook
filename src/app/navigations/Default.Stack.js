@@ -5,11 +5,13 @@ import { Header } from '~/components'
 
 const Stack = createStackNavigator()
 
-const DefaultStack = ({ screens, withoutHeader = false }) => (
+const DefaultStack = ({ screens, withoutHeader = false, ...restProps }) => (
   <Stack.Navigator
+    detachInactiveScreens
     screenOptions={{
       header: (props) => (!withoutHeader ? <Header {...props} /> : null)
-    }}>
+    }}
+    {...restProps}>
     {screens.map(({ name, component, ...rest }) => (
       <Stack.Screen name={name} component={component} key={name} {...rest} />
     ))}

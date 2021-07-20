@@ -15,6 +15,6 @@ const ExerciseEdit = (props) => {
   )
 }
 
-const titleTransformer = ({ route }) => ({ title: route.params.name })
+const titleTransformer = ({ route }) => ({ title: `${route.params.name} Edit` })
 
 export default withRouteOptions(titleTransformer)(ExerciseEdit)
