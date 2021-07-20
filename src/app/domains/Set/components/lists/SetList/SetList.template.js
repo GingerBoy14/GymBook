@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useNavigation } from '@react-navigation/native'
-import { Box, Menu, Text } from '@qonsoll/react-native-design'
+import { Menu, Text } from '@qonsoll/react-native-design'
+import { SetView } from '~/app/domains/Set/components'
 import { ROUTE_PATHS } from '~/constants'
-import { PARAMS as setParamIcons } from '~/app/domains/Set/constants'
-import theme from '~/styles/theme'
 
 const SetList = (props) => {
   const { data } = props
@@ -25,22 +24,7 @@ const SetListItem = (props) => {
   const { params } = props
 
   // [COMPUTED_PROPERTIES]
-  const setParams = params.map(({ type }) => {
-    const Icon = setParamIcons[type].icon
-
-    return (
-      <Box flexDirection="row" alignItems="center">
-        <Box pr={4}>
-          <Icon
-            height={theme.CORE.ICON_SIZES.xs}
-            width={theme.CORE.ICON_SIZES.xs}
-          />
-        </Box>
-
-        <Text>{type}</Text>
-      </Box>
-    )
-  })
+  const setParams = params.map(({ type }) => <SetView type={type} />)
 
   return setParams.map((item, index) => (
     <>

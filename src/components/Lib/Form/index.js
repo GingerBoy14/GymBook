@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useForm, FormProvider } from 'react-hook-form'
+import { useForm, FormProvider, useFieldArray } from 'react-hook-form'
 import FormItem from './FormItem'
 
 const Form = (props) => {
@@ -19,5 +19,6 @@ Form.propTypes = { form: PropTypes.object }
 
 Form.Item = FormItem
 Form.useForm = useForm
+Form.useFieldArray = useFieldArray
 
 export default Form

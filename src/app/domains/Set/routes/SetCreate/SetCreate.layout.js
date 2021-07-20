@@ -1,11 +1,23 @@
 import React from 'react'
-import { Text } from '@qonsoll/react-native-design'
 import { PageWrapper, withRouteOptions } from '~/components'
+import { SetForm } from '~/app/domains/Set/components'
+import { COLLECTIONS } from '~/constants'
+import { createDocument } from '~/services'
 
-const SetCreate = () => {
+const SetCreate = (props) => {
+  const { navigation } = props
+
+  // [CLEAN_FUNCTIONS]
+  const onSubmit = async (data) => {
+    const { params } = data
+
+    await createDocument(COLLECTIONS.SET_TEMPLATES, { params })
+    navigation.goBack()
+  }
+
   return (
     <PageWrapper>
-      <Text>SetCreate</Text>
+      <SetForm onSubmit={onSubmit} />
     </PageWrapper>
   )
 }
