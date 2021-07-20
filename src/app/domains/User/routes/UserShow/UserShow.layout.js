@@ -11,7 +11,7 @@ const UserShow = (props) => {
 
   // [COMPUTED_PROPERTIES]
   const { userData } = session
-  const birthday = moment(userData?.birthday).format('MMMM Do YYYY')
+  const birthday = moment(userData?.birthday.toDate()).format('MMMM Do YYYY')
 
   if (avatar) {
     return (

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 import { Box, Button, Col, Row, Upload } from '@qonsoll/react-native-design'
 import { DatePicker, Form, Input } from '~/components'
+import { getTimestamp } from '~/services'
 
 const UserForm = (props) => {
   const { onSubmit, onError, defaultValues } = props
@@ -122,11 +123,13 @@ const UserForm = (props) => {
           <DatePicker
             label="Birthday"
             placeholder="Enter your birthday"
-            onConfirm={(date) => onChange(moment(date).unix() * 1000)}
+            onConfirm={(date) =>
+              onChange(getTimestamp().fromDate(moment(date).toDate()))
+            }
             onBlur={onBlur}
-            value={new Date(value)}
+            value={moment(value.toDate()).toDate()}
             error={errors?.birthday?.message}
-            formattedValue={moment(value).format('MMMM Do YYYY')}
+            formattedValue={moment(value.toDate()).format('MMMM Do YYYY')}
           />
         )}
       </Form.Item>

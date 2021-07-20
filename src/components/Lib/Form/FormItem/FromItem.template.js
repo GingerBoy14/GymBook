@@ -3,7 +3,6 @@ import { Controller, useFormContext } from 'react-hook-form'
 import { Box } from '@qonsoll/react-native-design'
 import PropTypes from 'prop-types'
 
-
 // TODO write proptypes
 const FromItem = (props) => {
   const { children, ...rest } = props

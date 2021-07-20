@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "92390682980",
+    "project_id": "gymbook-ad985",
+    "storage_bucket": "gymbook-ad985.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92390682980:android:8fa09548a34855ee380a71",
+        "android_client_info": {
+          "package_name": "com.training"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92390682980-q4dgg8fpio27h10j5s3mdd38pv918d9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpClh3ku4cUspSLLeoLgfg70ayVaFIXrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92390682980-q4dgg8fpio27h10j5s3mdd38pv918d9f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "92390682980-o1n70p027roh7q5d873o59gmnp3cc5qk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.training"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

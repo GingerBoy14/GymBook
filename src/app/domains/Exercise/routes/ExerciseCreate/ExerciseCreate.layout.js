@@ -1,11 +1,11 @@
 import React from 'react'
-import { Text } from '@qonsoll/react-native-design'
 import { PageWrapper, withRouteOptions } from '~/components'
+import { ExerciseForm } from '~/app/domains/Exercise/components'
 
 const ExerciseCreate = () => {
   return (
     <PageWrapper>
-      <Text>ExerciseCreate</Text>
+      <ExerciseForm />
     </PageWrapper>
   )
 }
