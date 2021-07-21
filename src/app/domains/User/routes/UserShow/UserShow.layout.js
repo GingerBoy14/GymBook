@@ -1,5 +1,5 @@
+import React, { memo, useCallback } from 'react'
 import moment from 'moment'
-import React from 'react'
 import { Avatar, Box, Text } from '@qonsoll/react-native-design'
 import { useSession } from '~/app/contexts/Session'
 import { PageWrapper } from '~/components'
@@ -13,24 +13,25 @@ const UserShow = (props) => {
   const { userData } = session
   const birthday = moment(userData?.birthday.toDate()).format('MMMM Do YYYY')
 
-  if (avatar) {
-    return (
+  const UserAvatar = useCallback(
+    () => (
       <Avatar
         size="xxl"
-        uri={session.userData?.avatarURL}
+        src={{ uri: session.userData?.avatarURL, cache: 'force-cache' }}
         fullName={`${session.userData?.firstName} ${session.userData?.secondName}`}
         {...rest}
       />
-    )
+    ),
+    [rest, session]
+  )
+
+  if (avatar) {
+    return <UserAvatar />
   }
   return (
     <PageWrapper>
       <Box alignItems="center" mb={12}>
-        <Avatar
-          size="xxl"
-          uri={session.userData?.avatarURL}
-          fullName={`${session.userData?.firstName} ${session.userData?.secondName}`}
-        />
+        <UserAvatar />
       </Box>
       <Box flexDirection="row" mb={12}>
         <Text fontWeight="bold">Name: </Text>
@@ -50,4 +51,4 @@ const UserShow = (props) => {
   )
 }
 
-export default UserShow
+export default memo(UserShow)

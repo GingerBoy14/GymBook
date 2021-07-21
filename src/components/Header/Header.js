@@ -34,13 +34,12 @@ const Header = (props) => {
   })
 
   return (
-    <Animated.View style={{ opacity }}>
-      <Row
-        pt={insets.top || 8}
-        pl={insets.left || 8}
-        pr={insets.right || 8}
-        pb={8}
-        bg="grey-9">
+    <Row
+      pt={insets.top || 8}
+      pl={insets.left || 8}
+      pr={insets.right || 8}
+      pb={8}>
+      <Animated.View style={{ flex: 1, flexDirection: 'row', opacity }}>
         {previous && (
           <Col auto v="center" mr={8}>
             <TouchableOpacity onPress={navigation.goBack}>
@@ -56,13 +55,13 @@ const Header = (props) => {
         <Col v="center">
           <Text variant="h4">{title}</Text>
         </Col>
-        <Col auto>
-          <Pressable onPress={navigation.openDrawer}>
-            <UserShow avatar size="md" />
-          </Pressable>
-        </Col>
-      </Row>
-    </Animated.View>
+      </Animated.View>
+      <Col auto>
+        <Pressable onPress={navigation.openDrawer}>
+          <UserShow avatar size="md" />
+        </Pressable>
+      </Col>
+    </Row>
   )
 }
 
