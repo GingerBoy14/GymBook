@@ -8,6 +8,7 @@ const SetView = (props) => {
   const { type, size = 'xs', ...rest } = props
   const Icon = setParamIcons[type].icon
 
+  //TODO fix text wrap if 5 item in row
   return (
     <Box flexDirection="row" alignItems="center">
       <Box pr={4}>

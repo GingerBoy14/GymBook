@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Box, Button, Checkbox } from '@qonsoll/react-native-design'
 import { useFieldArray } from 'react-hook-form'
+import { Box, Button, Checkbox } from '@qonsoll/react-native-design'
+import { Form } from '~/components'
 import { SetView } from '~/app/domains/Set/components'
 import { PARAMS } from '~/app/domains/Set/constants'
-import { Form } from '~/components'
 
 const SetForm = (props) => {
-  const { onSubmit, onError } = props
-
-  // [COMPONENT_STATE_HOOKS]
-  const [loading, setLoading] = useState(false)
+  const { onSubmit, onError, onDelete, edit, defaultValues } = props
 
   // [ADDITIONAL_HOOKS]
-  const form = Form.useForm()
+  const form = Form.useForm({ defaultValues })
   const { fields, append, remove } = useFieldArray({
     control: form.control,
     name: 'params'
   })
+
+  // [COMPONENT_STATE_HOOKS]
+  const [loading, setLoading] = useState(false)
+  const [deleteLoading, setDeleteLoading] = useState(false)
 
   // [COMPUTED_PROPERTIES]
   const { handleSubmit } = form
@@ -29,11 +30,21 @@ const SetForm = (props) => {
     setLoading(false)
   }
 
+  const onItemDelete = async () => {
+    setDeleteLoading(true)
+    await onDelete?.()
+    setDeleteLoading(false)
+  }
+
   return (
-    <Box flexDirection="column" flex={1}>
+    <Box flex={1}>
       <Form form={form}>
         {Object.keys(PARAMS).map((type) => (
-          <Form.Item name={type} defaultValue={false} shouldUnregister>
+          <Form.Item
+            key={type}
+            name={type}
+            defaultValue={false}
+            shouldUnregister>
             {({ field: { onChange, value } }) => (
               <Box
                 flexDirection="row"
@@ -59,9 +70,19 @@ const SetForm = (props) => {
           <Box flex={1} alignSelf="flex-end">
             <Button
               onPress={handleSubmit(onFormSubmit, onError)}
+              disabled={deleteLoading}
               loading={loading}>
-              Save
+              {edit ? 'Save' : 'Create'}
             </Button>
+            {edit && (
+              <Button
+                mt={8}
+                variant="danger-light"
+                onPress={onItemDelete}
+                loading={deleteLoading}>
+                Delete
+              </Button>
+            )}
           </Box>
         </Box>
       </Form>
@@ -69,6 +90,12 @@ const SetForm = (props) => {
   )
 }
 
-SetForm.propTypes = { onSubmit: PropTypes.func, onError: PropTypes.func }
+SetForm.propTypes = {
+  onSubmit: PropTypes.func,
+  onError: PropTypes.func,
+  onDelete: PropTypes.func,
+  edit: PropTypes.bool,
+  defaultValues: PropTypes.object
+}
 
 export default SetForm
